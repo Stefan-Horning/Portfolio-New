@@ -18,20 +18,21 @@
     margin-top: 20px; /* Abstand zum oberen Rand, anpassbar */
   background-color: global-styles.$box-background-color;
   border-radius: 30px;
-  padding: 20px;
-  padding-left: 40px; /* Link Padding, anpassbar */
-  padding-right: 40px; /* Link Padding, anpassbar */
+  padding: 10px;
+  padding-left: 30px; /* Link Padding, anpassbar */
+  padding-right: 30px; /* Link Padding, anpassbar */
   width: min-content;
   display: flex;
-  gap: 40px; /* Fügt Abstand zwischen den Links hinzu, anpassbar */
-
+  gap: 30px; /* Fügt Abstand zwischen den Links hinzu, anpassbar */
+z-index: 1;
   // Der Effekt wird auf die 'a' Tags angewendet
   a {
+    font-size: 0.8rem; // Schriftgröße der Links, anpassbar
     position: relative;        // Wichtig für die absolute Positionierung des Pseudo-Elements
     display: inline-block;     // Ermöglicht Padding und korrekte Breitenberechnung
     font-family: sans-serif;   // Deine Projekt-Schriftart
     cursor: pointer;
-    color: global-styles.$title-color;
+    color: global-styles.$subtitle-color;
     text-decoration: none;     // Entfernt Standard-Unterstreichungen
     padding: 12px 0;           // Oberer/Unterer Padding (anpassbar), links/rechts 0
 
@@ -39,7 +40,7 @@
     &::after {
       content: '';             // Muss Inhalt haben, um sichtbar zu sein
       position: absolute;
-      bottom: 0;               // Position unter dem Link
+      bottom: -20%;             // Position unter dem Link
       left: 50%;               // Startpunkt in der Mitte des Links
       transform: translateX(-50%) scale(0); // Zentriert horizontal und macht Punkt unsichtbar (Skala 0)
       width: 6px;              // Größe des Punktes
