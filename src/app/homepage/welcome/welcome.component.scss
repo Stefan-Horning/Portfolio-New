@@ -1,0 +1,87 @@
+@use '../../../styles.scss' as global-styles;
+
+
+.flex-center {
+    @include global-styles.flex();
+    width: 100%;
+}
+
+.flex-column {
+  @include global-styles.flex(center, center, column);
+  width: 100%;
+  z-index: 1;
+  margin-top: -30px
+}
+
+.flex-between {
+  @include global-styles.flex(space-between, center, row);
+}
+
+h1{
+    font-family: 'Inter', sans-serif;
+    font-weight: 100;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: global-styles.$title-color;
+    margin: 0;
+    text-shadow: 0 -8px 24px global-styles.$background-color;
+}
+
+.subtitle {
+    font-family: 'Inter', sans-serif;
+    font-weight: 100;
+    font-size: 1rem;
+    color: global-styles.$subtitle-color;
+    text-shadow: 0 -8px 24px global-styles.$background-color;
+    padding: 10px; 
+    padding-top: 0px;
+}
+
+.welcome-container{
+    text-align: center;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    img{
+        width: 300px;
+        height: 300px;
+        object-position: top;
+        object-fit: cover;
+    }
+}
+
+.button{
+    background-color: global-styles.$box-border-color;
+    opacity: 0.8;
+    padding: 20px;
+    width: 70%;
+    text-align: center;
+    border-radius: 10px;
+    opacity: 0.7;
+
+    a{
+        color: global-styles.$title-color;
+        text-decoration: none;
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+        font-size: 1rem;
+        text-align: center;
+
+        img{
+            width: 15px;
+            height: 15px;
+            margin-left: 5px;
+        }
+    }
+
+    &:hover{
+        opacity: 1;
+    }
+}
+
+.primary{
+    color: global-styles.$primary-color;
+    text-shadow: 0 -8px 24px global-styles.$background-color;
+}

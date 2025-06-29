@@ -4,7 +4,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
-  imports: [RouterLink,RouterLinkActive,CommonModule],
+  imports: [RouterLink,CommonModule],
   templateUrl: './nav.component.html',
   styleUrl: './nav.component.scss'
 })
