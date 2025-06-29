@@ -1,0 +1,66 @@
+@use '../../../styles.scss' as global-styles;
+
+.flex-center {
+    @include global-styles.flex();
+    width: 100%;
+}
+
+.flex-column {
+  @include global-styles.flex(center, center, column);
+}
+
+.flex-between {
+  @include global-styles.flex(space-between, center, row);
+}
+
+.box {
+    border: 2px solid global-styles.$box-border-color; /* Rahmenfarbe, anpassbar */
+    margin-top: 20px; /* Abstand zum oberen Rand, anpassbar */
+  background-color: global-styles.$box-background-color;
+  border-radius: 30px;
+  padding: 20px;
+  padding-left: 40px; /* Link Padding, anpassbar */
+  padding-right: 40px; /* Link Padding, anpassbar */
+  width: min-content;
+  display: flex;
+  gap: 40px; /* Fügt Abstand zwischen den Links hinzu, anpassbar */
+
+  // Der Effekt wird auf die 'a' Tags angewendet
+  a {
+    position: relative;        // Wichtig für die absolute Positionierung des Pseudo-Elements
+    display: inline-block;     // Ermöglicht Padding und korrekte Breitenberechnung
+    font-family: sans-serif;   // Deine Projekt-Schriftart
+    cursor: pointer;
+    color: global-styles.$title-color;
+    text-decoration: none;     // Entfernt Standard-Unterstreichungen
+    padding: 12px 0;           // Oberer/Unterer Padding (anpassbar), links/rechts 0
+
+    // Das Pseudo-Element für den Punkt
+    &::after {
+      content: '';             // Muss Inhalt haben, um sichtbar zu sein
+      position: absolute;
+      bottom: 0;               // Position unter dem Link
+      left: 50%;               // Startpunkt in der Mitte des Links
+      transform: translateX(-50%) scale(0); // Zentriert horizontal und macht Punkt unsichtbar (Skala 0)
+      width: 6px;              // Größe des Punktes
+      height: 6px;             // Größe des Punktes
+      background-color: global-styles.$title-color; // Farbe des Punktes (kann auch eine andere Farbe sein)
+      border-radius: 50%;      // Macht es zu einem Kreis
+      transition: transform 0.3s ease-out, opacity 0.3s ease-out; // Animation für Skala und Transparenz
+      opacity: 0;              // Startet unsichtbar (zusätzlich zur Skalierung)
+    }
+
+    // Hover-Zustand: Punkt erscheint
+    &:hover::after {
+      transform: translateX(-50%) scale(1); // Punkt erscheint (Skala 1)
+      opacity: 1;                          // Punkt wird sichtbar
+    }
+
+    // Optional: Aktiver Zustand für den Punkt (wenn du eine aktive Seite markieren willst)
+    // Angenommen, du verwendest routerLinkActive="active" in deinem HTML
+    &.active::after {
+      transform: translateX(-50%) scale(1); // Punkt ist immer sichtbar, wenn die Klasse "active" vorhanden ist
+      opacity: 1;
+    }
+  }
+}

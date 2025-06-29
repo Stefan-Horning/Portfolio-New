@@ -1,0 +1,17 @@
+@mixin spotlight($side: left) {
+    position: absolute;
+    top: 0;
+    #{$side}: 0;
+    width: 40%;
+    height: 50%;
+    z-index: 0;
+    object-fit: cover;
+}
+
+.spotlight-left {
+    @include spotlight(left);
+}
+
+.spotlight-right {
+    @include spotlight(right);
+}
