@@ -1,0 +1,19 @@
+@use '../../../styles.scss' as global-styles;
+
+
+.flex-center {
+    @include global-styles.flex();
+    width: 100%;
+}
+
+.flex-column {
+  @include global-styles.flex(center, center, column);
+  width: 100%;
+  z-index: 1;
+  margin-top: -10px;
+  color: global-styles.$title-color;
+}
+
+.flex-between {
+  @include global-styles.flex(space-between, center, row);
+}
