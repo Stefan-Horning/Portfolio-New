@@ -1,6 +1,32 @@
 <div class="flex-column">
     <div class="about-container">
-        
-    </div>
+        <div class="main-content">
+            <h1>Focused on clarity, performance, and user experience.</h1>
+        </div>
+        <div class="cv-content">
+            <h2>Here's My CV for You</h2>
+            <a href="assets/CV/CV-Stefan_Horning.pdf" download target="_blank">Download</a>
+        </div>
+        <div class="technologies-content">
+            <div class="tech-stack-content">
+                <p class="intro-text">I constantly try to improve</p>
+                <h2 class="section-title">My tech stack</h2>
+            </div>
 
+            <div class="tech-stack-grid">
+                <div class="first-tech-stack">
+                     <div *ngFor="let tech of technologies1" class="tech-card">
+                        <img src="/assets/icons/{{ tech }}.svg" alt="{{ tech }} logo">
+                    </div>
+                </div>
+               <div class="secound-tech-stack">
+                <div *ngFor="let tech of technologies2" class="tech-card">
+                    <img src="/assets/icons/{{ tech }}.svg" alt="{{ tech }} logo">
+                </div>
+               </div>
+                
+            </div>
+
+        </div>
+    </div>
 </div>
