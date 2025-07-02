@@ -54,7 +54,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 8px;
-  overflow: hidden;
+  overflow: hidden; // Wichtig für das Ausblenden der Animation außerhalb des Bereichs
 
 }
 
@@ -114,6 +114,8 @@
     max-height: 100%;
     display: flex;
     max-width: 50%;
+    position: relative; // Erforderlich für absolute Positionierung der Kinder, falls gewünscht
+    overflow: hidden; // Sicherstellen, dass Elemente außerhalb dieses Containers nicht sichtbar sind
 
     div{
         margin-left: 5px;
@@ -121,7 +123,7 @@
 
     .tech-card{
         border: 1px solid global-styles.$box-border-color;
-        background-color: global-styles.$box-background-color;
+        background-color: global-styles.$box-background-color-opacity;
         border-radius: 10px;
         display: flex;
         justify-content: center;
@@ -138,15 +140,55 @@
     }
   }
 
-      .tech-stack-content{
-        margin-left: 10px;
-      width: 50%;
-    }
+  .tech-stack-content{
+    margin-left: 10px;
+    width: 50%;
+  }
 
-    .secound-tech-stack{
-      margin-top: -3rem;
-    }
+  // WICHTIG: Die ursprünglichen margin-top Werte sollten nun wahrscheinlich entfernt oder angepasst werden,
+  // da die Animation die Position steuert.
+  // .secound-tech-stack{
+  //   margin-top: -3rem;
+  // }
+  // .first-tech-stack{
+  //   margin-top: -0.3rem;
+  // }
 
-    .first-tech-stack{
-      margin-top: -0.3rem;
-    }
+
+  .first-tech-stack, .secound-tech-stack {
+    display: flex;
+    flex-direction: column;
+    // Setze eine konsistente Breite, um Layout-Verschiebungen während der Animation zu verhindern
+    width: 50%; // Bei Bedarf anpassen, damit die Spalten nebeneinander liegen
+  }
+
+.first-tech-stack, .secound-tech-stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.first-tech-stack {
+  animation: scrollLoop 25s linear infinite;
+}
+
+.secound-tech-stack {
+  animation: scrollLoopReverse 25s linear infinite;
+}
+
+@keyframes scrollLoop {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-250%);
+  }
+}
+
+@keyframes scrollLoopReverse {
+  0% {
+    transform: translateY(-250%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

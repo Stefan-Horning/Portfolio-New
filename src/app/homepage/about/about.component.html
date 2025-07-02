@@ -15,16 +15,27 @@
 
             <div class="tech-stack-grid">
                 <div class="first-tech-stack">
-                     <div *ngFor="let tech of technologies1" class="tech-card">
-                        <img src="/assets/icons/{{ tech }}.svg" alt="{{ tech }} logo">
+                    <ng-container *ngFor="let tech of technologies1.concat(technologies1)">
+                    <div class="tech-card">
+                        <img 
+                            src="/assets/icons/{{ tech }}.svg" 
+                            alt="{{ tech }} logo"
+                            [ngStyle]="tech === 'tailwindcss' ? {'object-fit': 'fill'} : {}" 
+                        />
                     </div>
+                    </ng-container>
                 </div>
-               <div class="secound-tech-stack">
-                <div *ngFor="let tech of technologies2" class="tech-card">
-                    <img src="/assets/icons/{{ tech }}.svg" alt="{{ tech }} logo">
+                <div class="secound-tech-stack">
+                    <ng-container *ngFor="let tech of technologies2.concat(technologies2)">
+                    <div class="tech-card">
+                        <img 
+                            src="/assets/icons/{{ tech }}.svg" 
+                            alt="{{ tech }} logo"
+                            [ngStyle]="tech === 'tailwindcss' ? {'object-fit': 'fill'} : {}" 
+                        />
+                    </div>
+                    </ng-container>
                 </div>
-               </div>
-                
             </div>
 
         </div>

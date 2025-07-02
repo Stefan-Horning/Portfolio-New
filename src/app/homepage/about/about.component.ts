@@ -12,11 +12,18 @@ export class AboutComponent {
     'Angular',
     'Ts',
     'HTML',
+    'CSS', 
+    'Js', 
+    'tailwindcss',
+    
   ];
   technologies2 = [
-    '',
-    'Git',
     'Python',
     'Django',
+    'SQL', 
+    'API', 
+    'Scrum', 
+    'Git',
+
   ];
 }
