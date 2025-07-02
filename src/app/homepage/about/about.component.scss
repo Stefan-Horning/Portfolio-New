@@ -58,6 +58,64 @@
 
 }
 
+.future-content{
+  border: 1px solid global-styles.$box-border-color;
+  min-height: 25vh;
+  background-image: url('/assets/background/grid-pattern.svg');
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  margin-top: 20px;
+  background-color: global-styles.$box-background-color;
+
+  img{
+    width: 50%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+  }
+}
+
+.contact-content{
+    border: 1px solid global-styles.$box-border-color;
+    min-height: 25vh;
+    background-image: url(/assets/background/contact-pre.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+    margin-top: 20px;
+    background-color: global-styles.$background-color;
+
+h1{
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: global-styles.$title-color;
+    text-align: start;
+    margin: 0;
+    padding: 8px;
+    max-width: 70%;
+  }
+
+  a{
+    text-decoration: none;
+    color: global-styles.$primary-color;
+    padding: 12px 16px;
+    border: 1px solid global-styles.$primary-color;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+
+    &:hover{
+      background-color: global-styles.$primary-color-hover;
+    }
+  }
+}
+
 .cv-content{
     border: 1px solid global-styles.$box-border-color;
     min-height: 25vh;
