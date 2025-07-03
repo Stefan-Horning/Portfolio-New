@@ -1,8 +1,13 @@
-<div class="flex-center">
-    <div class="box">
-        <a routerLink="#about">About</a>
-        <a routerLink="#projects">Projects</a>
-        <a routerLink="#testimonials">Testimonials</a>
-        <a routerLink="#contact">Contact</a>
-    </div>
+<div class="flex-between" [class.open]="menuOpen"> <div class="box" [class.open]="menuOpen">
+    <a routerLink="#about" (click)="closeMenu()">About</a>
+    <a routerLink="#projects" (click)="closeMenu()">Projects</a>
+    <a routerLink="#testimonials" (click)="closeMenu()">Testimonials</a>
+    <a routerLink="#contact" (click)="closeMenu()">Contact</a>
+
+    <button class="burger nav-icon-8" (click)="toggleMenu()" [class.open]="menuOpen" aria-label="Toggle menu" [attr.aria-expanded]="menuOpen">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+  </div>
 </div>
