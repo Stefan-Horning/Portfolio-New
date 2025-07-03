@@ -1,7 +1,6 @@
 <img class="spotlight-left" src="/assets/background/spotlight-left.svg" alt="">
 <img class="spotlight-right" src="/assets/background/spotlight-right.svg" alt="">
 <img class="grid" src="/assets/background/grid-pattern.svg" alt="">
-<app-nav></app-nav>
+<app-nav [ngClass]="{ 'hidden': !isVisible, 'visible': isVisible }" [parentIsVisible]="isVisible"></app-nav>
 <app-welcome></app-welcome>
 <app-about></app-about>
-
