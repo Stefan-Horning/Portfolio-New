@@ -1,13 +1,22 @@
-<div class="flex-between" [class.open]="menuOpen"> <div class="box" [class.open]="menuOpen">
+<div class="flex-between"> 
+  <div class="box" [class.close]="!menuOpen" [class.open]="menuOpen">
     <a routerLink="#about" (click)="closeMenu()">About</a>
     <a routerLink="#projects" (click)="closeMenu()">Projects</a>
     <a routerLink="#testimonials" (click)="closeMenu()">Testimonials</a>
-    <a routerLink="#contact" (click)="closeMenu()">Contact</a>
-
-    <button class="burger nav-icon-8" (click)="toggleMenu()" [class.open]="menuOpen" aria-label="Toggle menu" [attr.aria-expanded]="menuOpen">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
+    <a style="padding-right: 25px;" routerLink="#contact" (click)="closeMenu()">Contact</a>
+      <div class="close-button" (click)="closeMenu()">
+      <span></span>
+      <span></span>
+    </div>
+    
+   
   </div>
 </div>
+
+<div class="box burger-div" [class.hide]="menuOpen">
+  <div class="burger" (click)="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div> 
