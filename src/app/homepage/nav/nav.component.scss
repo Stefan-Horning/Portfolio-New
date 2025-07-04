@@ -1,16 +1,11 @@
 @use '../../../styles.scss' as global-styles;
 
 .flex-between {
-  @include global-styles.flex(flex-end, center, row); // Standard: flex-end
+  @include global-styles.flex(center, center, row);
   position: relative;
   z-index: 100;
   width: 100%;
-  transition: justify-content 0.6s ease-in-out; // Transition für die Box-Zentrierung
-
-  // Wenn das Menü offen ist, zentriere den Inhalt
-  &.open {
-    justify-content: center;
-  }
+  transition: justify-content 0.6s ease-in-out;
 }
 
 .box {
@@ -18,20 +13,17 @@
   border-radius: 30px;
   display: flex;
   align-items: center;
-  overflow: hidden; // Wichtig, um die unsichtbaren Links zu verstecken
-  white-space: nowrap; // Verhindert Zeilenumbruch im geöffneten Zustand
-  // Übergang für Padding, Gap, Breite, Border und Background
-  transition: padding 0.5s ease-in-out, gap 0.5s ease-in-out, width 0.5s ease-in-out,
-              border-color 0.5s ease-in-out, background-color 0.5s ease-in-out;
-
-  // Default/Geschlossener Zustand der Box
-  // Hier sorgen wir dafür, dass die Box nur den Burger umgibt
-  padding: 10px 15px; // Vertikales Padding 10px, horizontales 15px
-  gap: 0; // Kein Gap im geschlossenen Zustand
-  width: auto; // Passt sich dem Inhalt an (Burger)
-  border: 2px solid transparent; // Transparenter Border im geschlossenen Zustand
-  background-color: transparent; // Transparenter Hintergrund im geschlossenen Zustand
-
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 10px 30px;
+  gap: 20px;
+  width: min-content;
+  border: 2px solid global-styles.$box-border-color;
+  background-color: global-styles.$box-background-color;
+  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+  transform: translateY(-200%);
+  opacity: 0;
+  pointer-events: none;
 
   a {
     font-size: 0.7rem;
@@ -41,114 +33,95 @@
     cursor: pointer;
     color: global-styles.$subtitle-color;
     text-decoration: none;
-    padding: 12px 0; // Standard-Padding für Links
-    white-space: nowrap; // Verhindert Umbruch der Links
-    // Transition für Sichtbarkeit und Größe der Links
-    transition: flex-basis 0.4s ease-out, opacity 0.4s ease-out, padding 0.4s ease-out;
-
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: -20%;
-      left: 50%;
-      transform: translateX(-50%) scale(0);
-      width: 6px;
-      height: 6px;
-      background-color: global-styles.$title-color;
-      border-radius: 50%;
-      transition: transform 0.3s ease-out, opacity 0.3s ease-out;
-      opacity: 0;
-    }
-
-    &:hover::after,
-    &.active::after {
-      transform: translateX(-50%) scale(1);
-      opacity: 1;
-    }
+    padding: 12px 0;
+    white-space: nowrap;
   }
 
-  // Links im geschlossenen Zustand (wenn die Box :not(.open) ist)
-  // Diese Regeln werden vom globalen `a` Block überschrieben
-  // und stellen sicher, dass die Links nicht sichtbar sind und keinen Platz einnehmen.
-  a {
-    flex-basis: 0;
+  &.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: all;
+    transition-delay: 0.3s;
+  }
+
+  &.close {
+    transform: translateY(-200%);
     opacity: 0;
     pointer-events: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  // Wenn Menü offen: Box und Links werden sichtbar und erweitern sich
-  &.open {
-    padding: 10px 30px; // Volles Padding für die Box
-    gap: 20px; // Standard-Gap zwischen Links
-    width: min-content; // Box-Breite passt sich dem Inhalt an (Links + Burger)
-    border: 2px solid global-styles.$box-border-color; // Border wird sichtbar
-    background-color: global-styles.$box-background-color; // Hintergrund wird sichtbar
-
-    a {
-      flex-basis: auto; // Links nehmen ihren natürlichen Platz ein
-      opacity: 1;
-      pointer-events: auto; // Wieder anklickbar
-      padding: 12px 0; // Padding wiederherstellen
-    }
+    transition-delay: 0s;
   }
 }
 
-// Burger-Button Styles (angepasst für nav-icon-8)
+.burger-div {
+  position: absolute;
+  right: 10px;
+  top: 0px;
+  z-index: 1000;
+  padding: 20px;
+  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+  transform: translateX(0);
+  opacity: 1;
+  pointer-events: all;
+
+  &.hide {
+    transform: translateX(150%);
+    opacity: 0;
+    pointer-events: none;
+    transition-delay: 0s;
+  }
+}
+
 .burger {
-  width: 25px;
-  height: 20px;
-  margin: 0; // KEINE MARGINS HIER, DIE BREITE DER BOX BEEINFLUSSEN
-  position: relative;
   cursor: pointer;
-  display: inline-block;
-  background: none;
-  border: none;
-  transition: all 0.3s ease-in-out;
+      user-select: none;          /* verhindert Textmarkierung */
+  -webkit-user-select: none;  /* Safari/ältere Chromium‑Versionen */
+  -ms-user-select: none;  
+  span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: global-styles.$subtitle-color;
+    margin-bottom: 5px;
+    transition: all 0.3s ease-in-out;
+    border-radius: 10px;
+      user-select: none;          /* verhindert Textmarkierung */
+  -webkit-user-select: none;  /* Safari/ältere Chromium‑Versionen */
+  -ms-user-select: none;  
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  z-index: 2000;
 
   span {
-    background-color: red;
     position: absolute;
-    border-radius: 2px;
-    transition: all .3s cubic-bezier(.8, .5, .2, 1.4);
-    height: 2px;
-  }
-
-  // DEFAULT / GESCHLOSSENER ZUSTAND
-  &:not(.open) span {
-    background-color: global-styles.$title-color;
-    width: 100%;
-    transform: none;
+    top: 50%;
     left: 0;
-  }
+    width: 100%;
+    height: 3px;
+    background-color: red;
+    border-radius: 2px;
+    transform-origin: center;
+    transition: all 0.3s ease-in-out;
+      user-select: none;          /* verhindert Textmarkierung */
+  -webkit-user-select: none;  /* Safari/ältere Chromium‑Versionen */
+  -ms-user-select: none;  
 
-  span:nth-child(1){
-    top:0px;
-  }
-  span:nth-child(2){
-    top:9px;
-  }
-  span:nth-child(3){
-    bottom:0px;
-  }
-
-  // Animation für den geöffneten Zustand (das "gestapelte" Hamburger-Symbol)
-  &.open {
-    span {
-      width: 80%;
-      left: 10%;
-      transform: none;
+    &:first-child {
+      transform: rotate(45deg);
     }
 
-    span:nth-child(1){
-      top: 9px;
-    }
-    span:nth-child(2){
-      top: 9px;
-    }
-    span:nth-child(3){
-      top: 9px;
+    &:last-child {
+      transform: rotate(-45deg);
     }
   }
 }
