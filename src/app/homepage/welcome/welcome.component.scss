@@ -84,6 +84,8 @@ h1{
 }
 
 .primary{
-    color: global-styles.$primary-color;
+    background: linear-gradient(to right, global-styles.$primary-color, darken(global-styles.$primary-color, 15%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     text-shadow: 0 -8px 24px global-styles.$background-color;
 }
