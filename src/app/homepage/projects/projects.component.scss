@@ -31,25 +31,100 @@
 
 .project-card{
     border: 1px solid global-styles.$box-border-color;
-  background-color: global-styles.$box-background-color;
+  background-color: global-styles.$background-color;
   display: flex;
   justify-content: center;
     align-items: center;
     flex-direction: column;
     border-radius: 10px;
+    padding: 20px;
 
-  img{
-    max-width: 95%;
-    object-fit: cover;
-    padding: 10px;
-    border-radius: 15px;
-  }
+    .image-container{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 25vh;
+        margin-top: 10px;
+        border: 1px solid global-styles.$box-border-color;
+        border-radius: 10px;
+            overflow: hidden;
+        background-image: url('/assets/background/project-bg.svg');
+
+         img{
+            object-fit: contain;
+            width: 70%;
+            transform: rotate(5deg);
+            margin-top: 30%;
+        }
+    }
+
+ 
 }
 
 .project-overdiv{
-    width: 100vw;
+    padding: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    padding: 1;
+}
+
+.project-content{
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: flex-start;
+    flex-direction: column;
+    
+    h2{
+         background: linear-gradient(to right, global-styles.$primary-color, darken(global-styles.$primary-color, 15%));
+        -webkit-background-clip: text;
+        background-clip: text; 
+        -webkit-text-fill-color: transparent;
+    }
+
+    p{
+        color: global-styles.$subtitle-color;
+        margin: 0;
+        font-size: 0.8rem;
+    }
+}
+
+.project-links{
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.icons{
+    img{
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-right: 10px;
+    }
+}
+
+.link{
+    a{
+        text-decoration: none;
+        color: global-styles.$primary-color;
+        font-weight: 500;
+        font-size: 0.8rem;
+        transition: color 0.3s;
+
+        &:hover{
+            color: darken(global-styles.$primary-color, 15%);
+        }
+
+        img{
+            width: 0.8rem;
+            height: 0.8rem;
+            margin-left: 5px;
+        }
+    }
 }
