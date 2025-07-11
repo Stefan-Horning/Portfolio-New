@@ -1,0 +1,31 @@
+<div class="projects-container">
+    <div class="headline">
+        <h1 class="first">A small selection of</h1>
+        <h1 class="second">recent projects</h1>
+    </div>
+    <div class="project-overdiv" *ngFor="let project of projects">
+            <div class="project-card">
+                <div class="image-container">
+                    <img [src]="project.imageUrl" alt="{{ project.title }} Image">
+                </div>
+                <div class="project-content">
+                    <h2>{{ project.title }}</h2>
+                    <p>{{ project.description }}</p>
+                </div>
+               
+                <div class="project-links">
+                    <div class="icons">
+                        <ng-container *ngFor="let tech of project.technologies">
+                            <img [src]="'assets/icons/' + tech + '.svg'" [alt]="tech + ' icon'">
+                        </ng-container>
+                    </div>
+                    <div class="link">
+                        <a target="_blank" [href]="project.link">
+                            Check Live Site 
+                            <img src="/assets/icons/arrowProject.png" alt="Arrow Right Icon">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
