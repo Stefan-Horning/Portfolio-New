@@ -1,0 +1,24 @@
+@use '../../../styles.scss' as global-styles;
+
+.overdiv{
+    @include global-styles.flex(center, center, column);
+}
+
+.experience-header{
+    text-align: center;
+    
+    h1{
+        font-size: 2rem;
+        font-weight: 700;
+        margin: 0;
+     color: global-styles.$subtitle-color;
+    }
+
+    span{
+        background: linear-gradient(to right, global-styles.$primary-color, darken(global-styles.$primary-color, 15%));
+        -webkit-background-clip: text;
+        background-clip: text; 
+        -webkit-text-fill-color: transparent;
+    }
+    margin-bottom: 20px;
+}
