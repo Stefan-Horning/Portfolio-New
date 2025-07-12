@@ -1,0 +1,19 @@
+<div class="overdiv">
+    <div class="experience-header">
+        <h1>My <span>work experience</span></h1>
+    </div>
+    <div class="experience-overdiv">
+       <div class="experience-box" *ngFor="let experience of experiences">
+           <div class="image-container">
+                <img [src]="experience.icon" alt="">
+                <img class="logo" [src]="experience.companyLogo" alt="">
+           </div>
+           <div>
+                <h2>{{ experience.title }}</h2>
+                <h3>{{ experience.company }}</h3>
+                <p>{{ experience.startDate }} - {{ experience.endDate }}</p>
+                <span>{{ experience.description }}</span>
+           </div>
+       </div>
+    </div>
+</div>

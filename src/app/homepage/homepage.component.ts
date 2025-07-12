@@ -4,11 +4,12 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { AboutComponent } from './about/about.component';
 import { CommonModule } from '@angular/common';
 import { ProjectsComponent } from './projects/projects.component';
+import { experienceComponent } from './experience/experience.component';
 
 @Component({
   selector: 'app-homepage',
   standalone: true,
-  imports: [NavComponent, WelcomeComponent, AboutComponent, CommonModule, ProjectsComponent],
+  imports: [NavComponent, WelcomeComponent, AboutComponent, CommonModule, ProjectsComponent,experienceComponent],
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.scss']
 })
