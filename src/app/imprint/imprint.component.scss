@@ -1,0 +1,5 @@
+@use '../../styles.scss' as global-styles;
+div{
+    padding: 10px;
+    color: global-styles.$subtitle-color;
+}

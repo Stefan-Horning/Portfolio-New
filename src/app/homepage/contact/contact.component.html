@@ -2,9 +2,27 @@
     <div class="contact-header">
        <h1>Contact Me</h1>
     </div>
-    <div>
+    <div class="form-overdiv">
         <form action="">
-            
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Text</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <div class="privacy-checkbox">
+                <input type="checkbox" id="privacy" name="privacy" required>
+                <label for="privacy">
+                    I have read and accept the <a href="/privacy-policy" target="_blank">privacy policy</a>.
+                </label>
+            </div>
+            <button type="submit">Send</button>
         </form>
     </div>
 </div>
