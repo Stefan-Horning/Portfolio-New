@@ -1,3 +1,4 @@
+import { ViewportScroller } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './welcome.component.scss'
 })
 export class WelcomeComponent {
+  constructor(private viewportScroller: ViewportScroller) {}
 
+  scrollToSection(sectionId: string) {
+    this.viewportScroller.scrollToAnchor(sectionId);
+  }
 }
