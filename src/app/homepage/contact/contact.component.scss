@@ -1,0 +1,63 @@
+@use '../../../styles.scss' as global-styles;
+
+.overdiv{
+    @include global-styles.flex(center, center, column);
+    width: 100%;
+}
+
+.contact-header{
+    text-align: center;
+
+    h1{
+        font-size: 1.7rem;
+        font-weight: 700;
+        margin: 0;
+        color: global-styles.$subtitle-color;
+       
+    }
+
+    span{
+        background: linear-gradient(to right, global-styles.$primary-color, darken(global-styles.$primary-color, 15%));
+        -webkit-background-clip: text;
+        background-clip: text; 
+        -webkit-text-fill-color: transparent; background: linear-gradient(to right, global-styles.$primary-color, darken(global-styles.$primary-color, 15%));
+        -webkit-background-clip: text;
+        background-clip: text; 
+        -webkit-text-fill-color: transparent;
+    }
+    margin-bottom: 20px;
+}
+
+.form-overdiv{
+    width: 100%;
+}
+
+.button{
+    background-color: global-styles.$box-border-color;
+    opacity: 0.8;
+    padding: 20px;
+    width: 80%;
+    text-align: center;
+    border-radius: 10px;
+    opacity: 0.7;
+    margin-top: 20px;
+
+    a{
+        color: global-styles.$title-color;
+        text-decoration: none;
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+        font-size: 1rem;
+        text-align: center;
+
+        img{
+            width: 15px;
+            height: 15px;
+            margin-left: 5px;
+        }
+    }
+
+    &:hover{
+        opacity: 1;
+    }
+}

@@ -13,6 +13,7 @@ html,body {
     background-color: $background-color;
     font-family: 'Inter';
     min-height: 100vh;
+    scroll-behavior: smooth;
 }
 
 @mixin flex($justify: center, $align: center, $direction: row) {

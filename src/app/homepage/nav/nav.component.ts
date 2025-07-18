@@ -1,11 +1,11 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, ViewportScroller } from '@angular/common';
 import { Component, HostListener, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
   standalone: true, 
-  imports: [RouterLink, CommonModule],
+  imports: [CommonModule],
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.scss']
 })
@@ -26,5 +26,12 @@ export class NavComponent implements OnChanges {
 
   closeMenu() {
     this.menuOpen = false;
+  }
+
+    constructor(private viewportScroller: ViewportScroller) {}
+
+  scrollToSection(sectionId: string) {
+    this.viewportScroller.scrollToAnchor(sectionId);
+    this.closeMenu();
   }
 }
