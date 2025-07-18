@@ -11,7 +11,16 @@ import { FooterComponent } from './footer/footer.component';
 @Component({
   selector: 'app-homepage',
   standalone: true,
-  imports: [NavComponent, WelcomeComponent, AboutComponent, CommonModule, ProjectsComponent,experienceComponent, ContactComponent,FooterComponent],
+  imports: [
+    NavComponent,
+    WelcomeComponent,
+    AboutComponent,
+    CommonModule,
+    ProjectsComponent,
+    experienceComponent,
+    ContactComponent,
+    FooterComponent
+  ],
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.scss']
 })
@@ -20,7 +29,7 @@ export class HomepageComponent implements OnInit {
   private lastScrollTop = 0;
 
   ngOnInit(): void {
-    this.lastScrollTop = window.pageYOffset; // Verhindert Flackern beim ersten Scroll
+    this.lastScrollTop = window.pageYOffset;
   }
 
   @HostListener('window:scroll', [])
@@ -28,11 +37,11 @@ export class HomepageComponent implements OnInit {
     const currentScroll = window.pageYOffset;
 
     if (currentScroll > this.lastScrollTop + 5) {
-      this.isVisible = false; // Runter scrollen
+      this.isVisible = false;
     } else if (currentScroll < this.lastScrollTop - 5) {
-      this.isVisible = true;  // Hoch scrollen
+      this.isVisible = true;
     }
 
-    this.lastScrollTop = Math.max(currentScroll, 0); 
+    this.lastScrollTop = Math.max(currentScroll, 0);
   }
 }
