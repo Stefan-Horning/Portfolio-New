@@ -13,6 +13,11 @@
         font-weight: 700;
         margin: 0;
      color: global-styles.$subtitle-color;
+
+     @media (min-width: 700px) {
+         font-size: 2.5rem;
+
+     }
     }
 
     span{
@@ -30,24 +35,38 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin: 20px;
+
+    @media (min-width: 1000px) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
 
 .experience-box{
-     border: 1px solid global-styles.$box-border-color;
-  background-color: global-styles.$box-background-color;
-  display: flex;
-  justify-content: center;
-    align-items: center;
+    border: 1px solid global-styles.$box-border-color;
+    background-color: global-styles.$box-background-color;
+    display: flex;
+    justify-content: center;
     flex-direction: column;
     border-radius: 10px;
     padding: 20px;
     margin-bottom: 20px;
+    width: 100%;
+    text-align: start;
+
+    @media (min-width: 1000px) {
+        width: 40%;
+        min-height: 300px;
+        margin: 10px;
+    }
 
     .image-container{
         width: 100%;
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: space-between;
         max-height: 100px;
         margin-bottom: 20px;
 
@@ -85,5 +104,8 @@
         font-size: 0.8rem;
         color: global-styles.$subtitle-color;
         margin: 5px 0;
+        @media (min-width: 1500px) {
+            font-size: 1rem;
+        }
     }
 }

@@ -15,6 +15,11 @@
         font-size: 2rem;
         font-weight: 700;
         margin: 0;
+
+        @media (min-width: 700px) {
+            font-size: 2.5rem;
+            
+        }
     }
 
     .first{
@@ -38,6 +43,7 @@
     flex-direction: column;
     border-radius: 10px;
     padding: 20px;
+    
 
     .image-container{
         width: 100%;
@@ -50,16 +56,35 @@
         border-radius: 10px;
             overflow: hidden;
         background-image: url('/assets/background/project-bg.svg');
+        background-repeat: no-repeat;
 
          img{
             object-fit: contain;
             width: 70%;
             transform: rotate(5deg);
             margin-top: 30%;
+            @media (min-width: 700px) {
+                width: 50%;
+            }
+
         }
+
+            @media (min-width: 1500px) {
+                height: 30vh;
+            }
     }
 
  
+}
+
+.projects-grid{
+    display: grid;
+    @media (min-width: 1000px) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+    }
 }
 
 .project-overdiv{
@@ -69,6 +94,11 @@
     justify-content: center;
     flex-direction: column;
     padding: 1;
+
+    @media (min-width: 1000px) {
+        width: 40%;
+        margin: 10px;
+    }
 }
 
 .project-content{
@@ -77,18 +107,31 @@
     justify-content: start;
     align-items: flex-start;
     flex-direction: column;
+
+
     
     h2{
          background: linear-gradient(to right, global-styles.$primary-color, darken(global-styles.$primary-color, 15%));
         -webkit-background-clip: text;
         background-clip: text; 
         -webkit-text-fill-color: transparent;
+
+        @media (min-width: 1200px) {
+            font-size: 2rem;
+        }
     }
 
     p{
         color: global-styles.$subtitle-color;
         margin: 0;
         font-size: 0.8rem;
+        @media (min-width: 1000px) {
+            min-height: 75px;
+            font-size: 0.9rem;
+        }
+        @media (min-width: 1200px) {
+            font-size: 1rem;
+        }
     }
 }
 
@@ -106,6 +149,14 @@
         width: 1.5rem;
         height: 1.5rem;
         margin-right: 10px;
+        @media (min-width: 1000px) {
+            width: 1.7rem;
+            height: 1.7rem;
+        }
+        @media (min-width: 1200px) {
+            width: 2rem;
+            height: 2rem;
+        }
     }
 }
 
@@ -116,6 +167,11 @@
         font-weight: 500;
         font-size: 0.8rem;
         transition: color 0.3s;
+
+        @media (min-width: 1000px) {
+            font-size: 1rem;
+            
+        }
 
         &:hover{
             color: darken(global-styles.$primary-color, 15%);
