@@ -1,6 +1,5 @@
 @use '../../../styles.scss' as global-styles;
 
-
 .flex-center {
     @include global-styles.flex();
     width: 100%;
@@ -23,17 +22,16 @@
     margin-top: 50px;
     width: 100%;
 
-    @media (min-width: 700px) {
+    @media (min-width: 1000px) {
       display:grid;
-      grid-template-areas: 
+      grid-template-areas:
         "main-content cv-content"
         "main-content technologies-content"
         "contact-content future-content"
         "links-content future-content"
-
       ;
       grid-template-columns: 1fr 3fr;
-      grid-template-rows: auto auto 1fr 1fr; // wichtig für vertikales Füllen!
+      grid-template-rows: auto auto 1fr 1fr;
       gap: 5px;
     }
 }
@@ -58,14 +56,11 @@
     padding: 8px;
     max-width: 70%;
     margin-bottom: 14%;
+    max-width: 50%;
 
-    @media (min-width: 700px) {
+    @media (min-width: 550px) {
       font-size: 1.5rem;
     }
-  }
-
-  @media (min-width: 700px) {
-    width: 100%;
   }
 }
 
@@ -80,14 +75,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 8px;
-  overflow: hidden; 
+  overflow: hidden;
   margin: 20px;
-
-  @media (min-width: 700px) {
-    margin: 0;
-    max-height: 188px !important;
-  }
-
 }
 
 .links-content{
@@ -137,10 +126,6 @@
     object-fit: contain;
     border-radius: 10px;
   }
-
-      @media (min-width: 700px) {
-      margin: 0;
-    }
 }
 
 .contact-content{
@@ -159,12 +144,7 @@
     background-color: global-styles.$background-color;
     margin: 20px;
 
-    @media (min-width: 700px) {
-      margin: 0;
-      width: 40vw;
-    }
-
-h1{
+h2{
     font-size: 1.2rem;
     font-weight: 700;
     color: global-styles.$title-color;
@@ -172,6 +152,19 @@ h1{
     margin: 0;
     padding: 8px;
     max-width: 70%;
+    margin-bottom: 20px;
+
+        @media (min-width: 350px) {
+      font-size: 1.2rem;
+    }
+
+    @media (min-width: 550px) {
+      font-size: 1.5rem;
+    }
+
+    @media (min-width: 800px) {
+      font-size: 1.8rem;
+    }
   }
 
   a{
@@ -184,6 +177,10 @@ h1{
 
     &:hover{
       background-color: global-styles.$primary-color-hover;
+    }
+
+    @media (min-width: 800px) {
+      font-size: 1.2rem;
     }
   }
 }
@@ -202,22 +199,25 @@ h1{
     margin-top: 20px;
     background-color: global-styles.$box-background-color;
     margin: 20px;
-
-    @media (min-width: 700px) {
-      margin: 0;
-
-    }
   h2{
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 700;
     color: global-styles.$title-color;
     text-align: start;
     margin: 0;
-    padding: 8px;
     max-width: 70%;
+    margin-bottom: 20px;
 
-    @media (min-width: 700px) {
-      font-size: 1rem;
+    @media (min-width: 350px) {
+      font-size: 1.2rem;
+    }
+
+    @media (min-width: 550px) {
+      font-size: 1.5rem;
+    }
+
+    @media (min-width: 800px) {
+      font-size: 1.8rem;
     }
   }
 
@@ -233,24 +233,32 @@ h1{
       background-color: global-styles.$primary-color-hover;
     }
 
-    @media (min-width: 700px) {
-      font-size: 0.7rem;
+    @media (min-width: 800px) {
+      font-size: 1.2rem;
     }
   }
 }
 
 .intro-text {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     color: #cccccc;
     margin-bottom: 5px;
 
-    @media (min-width: 700px) {
-      font-size: 0.6rem;
+    @media (min-width: 420px) {
+      font-size: 0.8rem;
+    }
+
+    @media (min-width: 550px) {
+      font-size: 0.9rem;
+    }
+
+    @media (min-width: 800px) {
+      font-size: 1rem;
     }
   }
 
   .section-title {
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     font-weight: bold;
     margin: 0;
     line-height: 1.3;
@@ -258,15 +266,34 @@ h1{
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
+    @media (min-width: 420px) {
+      font-size: 1.3rem;
+    }
 
+    @media (min-width: 550px) {
+      font-size: 1.9rem;
+    }
+
+    @media (min-width: 800px) {
+      font-size: 2.2rem;
+    }
   }
 
   .tech-stack-grid{
     max-height: 100%;
     display: flex;
-    max-width: 50%;
-    position: relative; // Erforderlich für absolute Positionierung der Kinder, falls gewünscht
-    overflow: hidden; // Sicherstellen, dass Elemente außerhalb dieses Containers nicht sichtbar sind
+    justify-content: flex-end;
+    max-width: 60%;
+    position: relative;
+    overflow: hidden; /* Sicherstellen, dass die Animation nicht über den Container hinausragt */
+
+    @media (min-width: 370px) {
+      max-width: 50%;
+    }
+
+    @media (min-width: 700px) {
+      width: 30%;
+    }
 
     div{
         margin-left: 5px;
@@ -282,68 +309,72 @@ h1{
         flex-direction: column;
         margin-bottom: 10px;
         padding: 1rem;
+        height: 5vh;
+        width: 5vh;
+
+        @media (min-width: 600px) {
+        height: 5vh;
+        width: 5vh;
+      }
     }
 
     img{
-        width: 1.6rem;
-        height: 1.6rem;
+        height: 5vh;
+        width: 5vh;
         object-fit: cover;
-
-        // @media (min-width: 700px) {
-        //   width: 1rem;
-        //   height: 1rem;
-          
-        // }
     }
   }
 
   .tech-stack-content{
     margin-left: 10px;
-    width: 50%;
-  }
+    width: 40%;
+    
+        
+    @media (min-width: 370px) {
+      width: 40%;
+    }
 
-  // WICHTIG: Die ursprünglichen margin-top Werte sollten nun wahrscheinlich entfernt oder angepasst werden,
-  // da die Animation die Position steuert.
-  // .secound-tech-stack{
-  //   margin-top: -3rem;
-  // }
-  // .first-tech-stack{
-  //   margin-top: -0.3rem;
-  // }
+    @media (min-width: 700px) {
+      margin-left: 50px;
+    }
 
-
-  .first-tech-stack, .secound-tech-stack {
-    display: flex;
-    flex-direction: column;
-    // Setze eine konsistente Breite, um Layout-Verschiebungen während der Animation zu verhindern
-    width: 50%; // Bei Bedarf anpassen, damit die Spalten nebeneinander liegen
+    @media (min-width: 850px) {
+      margin-left: 70px;
+    }
   }
 
 .first-tech-stack, .secound-tech-stack {
   display: flex;
   flex-direction: column;
+  // Performance-Optimierung: Dem Browser mitteilen, dass sich die Transformation ändern wird
+  will-change: transform;
 }
 
 .first-tech-stack {
-  animation: scrollLoop 25s linear infinite;
+  animation: scrollLoop 20s linear infinite;
 }
 
 .secound-tech-stack {
-  animation: scrollLoopReverse 25s linear infinite;
+  animation: scrollLoopReverse 20s linear infinite;
 }
 
+// **Wichtige Änderungen hier:**
+// Die -50% sorgt dafür, dass die Animation genau die Höhe eines *einzigen* Satzes der duplizierten Elemente scrollt.
+// Da du jedes Array verdoppelt hast (Array + Array-Kopie), ist -50% der Gesamthöhe des Elements
+// der Punkt, an dem der zweite Satz nahtlos den ersten ersetzt.
 @keyframes scrollLoop {
   0% {
     transform: translateY(0);
   }
   100% {
-    transform: translateY(-250%);
+    transform: translateY(calc(-54vh - 16px)); // -1px für den Abstand zwischen den Elementen
   }
 }
 
 @keyframes scrollLoopReverse {
+  // Startet die umgekehrte Animation von der Mitte des duplizierten Satzes
   0% {
-    transform: translateY(-250%);
+    transform: translateY(-50%);
   }
   100% {
     transform: translateY(0);
@@ -357,12 +388,6 @@ h1{
   justify-content: center;
   gap: 1.3rem;
   padding-left: 10px;
-
-      @media (min-width: 700px) {
-      margin: 0;
-      width: 40vw;
-      padding-left: 0px;
-    }
 }
 
 .code-links {
@@ -385,5 +410,23 @@ h1{
   a{
     color: rgb(233, 146, 135);
     text-decoration: none;
+  }
+
+  @media (min-width: 500px) {
+    font-size: 1rem;
+
+  }
+
+  @media (min-width: 700px) {
+    margin-left: 50px;
+  }
+
+  @media (min-width: 850px) {
+    margin-left: 70px;
+  }
+
+  @media (min-width: 1000px) {
+    margin-left: 0px;
+      font-size: 0.8rem;
   }
 }
