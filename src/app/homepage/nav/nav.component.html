@@ -1,0 +1,27 @@
+<div class="flex-between"> 
+  <div class="box" 
+       [class.close]="isMobile && !menuOpen" 
+       [class.open]="isMobile && menuOpen || !isMobile">
+
+    <a href="#about" (click)="scrollToSection('about');$event.preventDefault();">About</a>
+    <a href="#projects" (click)="scrollToSection('projects');$event.preventDefault();">Projects</a>
+    <a href="#experiences" (click)="scrollToSection('experiences'); $event.preventDefault();">Experiences</a>
+    <a style="padding-right: 25px;" href="#contact" (click)="scrollToSection('contact'); $event.preventDefault();">Contact</a>
+
+    <div *ngIf="isMobile" style="height: 100%; display: flex; align-items: center; position: relative; margin-left: -30px;">
+      <div class="close-button" (click)="closeMenu()">
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Nur bei mobiler Ansicht -->
+<div class="box burger-div" *ngIf="isMobile" [class.hide]="menuOpen">
+  <div class="burger" (click)="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>

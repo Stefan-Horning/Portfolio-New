@@ -1,0 +1,164 @@
+@use '../../../styles.scss' as global-styles;
+
+
+.flex-center {
+    @include global-styles.flex();
+    width: 100%;
+}
+
+.flex-column {
+  @include global-styles.flex(center, center, column);
+  max-width: 100%;
+  z-index: 1;
+  margin-top: -10px;
+
+  @media (min-width: 1000px) {
+    margin-top: 50px;
+    
+  }
+}
+
+.flex-between {
+  @include global-styles.flex(space-between, center, row);
+}
+
+h1{
+    font-family: 'Inter', sans-serif;
+    font-weight: 100;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: global-styles.$title-color;
+    margin: 0;
+    text-shadow: 0 -8px 24px global-styles.$background-color;
+
+    @media (min-width: 550px) {
+        font-size: 2rem;
+    }
+
+    @media (min-width: 700px) {
+        font-size: 2.5rem;
+    }
+        
+    @media (min-width: 1000px) {
+        font-size: 3rem;
+    }
+
+    @media (min-width: 1300px) {
+        font-size: 3.5rem;
+    }
+
+    @media (min-width: 1500px) {
+        font-size: 4rem;
+    }
+
+    @media (min-width: 1700px) {
+        font-size: 4.5rem;
+    }
+}
+
+.subtitle {
+    font-family: 'Inter', sans-serif;
+    font-weight: 100;
+    font-size: 0.8rem;
+    color: global-styles.$subtitle-color;
+    text-shadow: 0 -8px 24px global-styles.$background-color;
+    padding-top: 0px;
+    margin-top: 25px;
+
+    @media (min-width: 550px) {
+        font-size: 1.1rem;
+    }
+
+    @media (min-width: 700px) {
+        font-size: 1.3rem;
+    }
+
+    @media (min-width: 1000px) {
+        font-size: 1.5rem;
+    }
+}
+
+.welcome-container{
+    margin-top: 100px;
+    max-width: 100vw;
+    text-align: center;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    @media (min-width: 1000px) {
+        margin-top: 50px;
+    }
+
+    @media (min-width: 1500px) {
+        margin-top: 0px;
+    }
+    img{
+        width: 300px;
+        height: 300px;
+        object-position: top;
+        object-fit: cover;
+
+        @media (min-width: 550px) {
+            width: 450px;
+            height: 450px;
+        }
+
+        @media (min-width: 1500px) {
+            width: 500px;
+            height: 500px;
+        }
+    }
+}
+
+.button{
+    background-color: global-styles.$box-border-color;
+    opacity: 0.8;
+    padding: 20px;
+    width: 80%;
+    text-align: center;
+    border-radius: 10px;
+    opacity: 0.7;
+    margin-top: 20px;
+    max-width: 500px;
+
+    a{
+        color: global-styles.$title-color;
+        text-decoration: none;
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+        font-size: 1rem;
+        text-align: center;
+
+        img{
+            width: 15px;
+            height: 15px;
+            margin-left: 5px;
+        }
+
+            @media (min-width: 550px) {
+                 font-size: 1.1rem;
+             }
+
+            @media (min-width: 700px) {
+                font-size: 1.3rem;
+            }
+
+        @media (min-width: 1000px) {
+            font-size: 1.5rem;
+        }
+    }
+
+    &:hover{
+        opacity: 1;
+    }
+}
+
+.primary{
+    background: linear-gradient(to right, global-styles.$primary-color, darken(global-styles.$primary-color, 15%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 -8px 24px global-styles.$background-color;
+}
