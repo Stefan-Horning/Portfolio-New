@@ -3,10 +3,10 @@
        [class.close]="isMobile && !menuOpen" 
        [class.open]="isMobile && menuOpen || !isMobile">
 
-    <a (click)="scrollToSection('about')">About</a>
-    <a (click)="scrollToSection('projects')">Projects</a>
-    <a (click)="scrollToSection('experiences')">Experiences</a>
-    <a style="padding-right: 25px;" (click)="scrollToSection('contact')">Contact</a>
+    <a href="#about" (click)="scrollToSection('about');$event.preventDefault();">About</a>
+    <a href="#projects" (click)="scrollToSection('projects');$event.preventDefault();">Projects</a>
+    <a href="#experiences" (click)="scrollToSection('experiences'); $event.preventDefault();">Experiences</a>
+    <a style="padding-right: 25px;" href="#contact" (click)="scrollToSection('contact'); $event.preventDefault();">Contact</a>
 
     <div *ngIf="isMobile" style="height: 100%; display: flex; align-items: center; position: relative; margin-left: -30px;">
       <div class="close-button" (click)="closeMenu()">
