@@ -8,37 +8,37 @@
             <a href="assets/CV/CV-Stefan_Horning.pdf" download target="_blank">Download</a>
         </div>
         <div class="technologies-content">
-            <div class="tech-stack-content">
+              <div class="tech-stack-content">
                 <p class="intro-text">I constantly try to improve</p>
                 <h2 class="section-title">My tech stack</h2>
-            </div>
+              </div>
 
             <div class="tech-stack-grid">
-                <div class="first-tech-stack">
-                    <ng-container *ngFor="let tech of technologies1.concat(technologies1)">
-                    <div class="tech-card">
-                        <img 
-                            src="/assets/icons/{{ tech }}.svg" 
-                            alt="{{ tech }} logo"
-                            [ngStyle]="tech === 'tailwindcss' ? {'object-fit': 'fill'} : {}" 
-                        />
-                    </div>
-                    </ng-container>
-                </div>
-                <div class="secound-tech-stack">
-                    <ng-container *ngFor="let tech of technologies2.concat(technologies2)">
-                    <div class="tech-card">
-                        <img 
-                            src="/assets/icons/{{ tech }}.svg" 
-                            alt="{{ tech }} logo"
-                            [ngStyle]="tech === 'tailwindcss' ? {'object-fit': 'fill'} : {}" 
-                        />
-                    </div>
-                    </ng-container>
-                </div>
-            </div>
+              <div class="first-tech-stack">
+                <ng-container *ngFor="let tech of technologies1.concat(technologies1)">
+                  <div class="tech-card">
+                    <img 
+                      src="/assets/icons/{{ tech }}.svg" 
+                      alt="{{ tech }} logo"
+                      [ngStyle]="tech === 'sass' ? {'object-fit': 'fill'} : {}" 
+                    />
+                  </div>
+                </ng-container>
+              </div>
 
-        </div>
+          <div class="secound-tech-stack">
+            <ng-container *ngFor="let tech of technologies2.concat(technologies2)">
+              <div class="tech-card">
+                <img 
+                  src="/assets/icons/{{ tech }}.svg" 
+                  alt="{{ tech }} logo"
+                  [ngStyle]="tech === 'sass' ? {'object-fit': 'fill'} : {}" 
+                />
+              </div>
+            </ng-container>
+          </div>
+  </div>
+</div>
 
                 <div class="future-content">
             <div class="tech-stack-content">
@@ -75,6 +75,98 @@
                 <a target="_blank" href="https://www.linkedin.com/in/stefan-henry-horning/">"linkedin.com/in/" <span class="operator">+</span> <span class="name">fullName</span></a>
                 <span class="operator">;</span>
             </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="desktop-container">
+    <div class="first-row ">
+        <div class="main-content">
+              <h1>Exploring the space where code meets security.</h1>
+        </div>
+      <div>
+          <div class="cv-content">
+            <h2>Here's My CV for You</h2>
+            <a href="assets/CV/CV-Stefan_Horning.pdf" download target="_blank">Download</a>
+          </div>
+                  <div class="technologies-content">
+              <div class="tech-stack-content">
+                <p class="intro-text">I constantly try to improve</p>
+                <h2 class="section-title">My tech stack</h2>
+              </div>
+
+            <div class="tech-stack-grid">
+              <div class="first-tech-stack">
+                <ng-container *ngFor="let tech of technologies1.concat(technologies1)">
+                  <div class="tech-card">
+                    <img 
+                      src="/assets/icons/{{ tech }}.svg" 
+                      alt="{{ tech }} logo"
+                      [ngStyle]="tech === 'sass' ? {'object-fit': 'fill'} : {}" 
+                    />
+                  </div>
+                </ng-container>
+              </div>
+
+          <div class="secound-tech-stack">
+            <ng-container *ngFor="let tech of technologies2.concat(technologies2)">
+              <div class="tech-card">
+                <img 
+                  src="/assets/icons/{{ tech }}.svg" 
+                  alt="{{ tech }} logo"
+                  [ngStyle]="tech === 'sass' ? {'object-fit': 'fill'} : {}" 
+                />
+              </div>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+</div>
+
+    <div class="second-row">
+      <div>
+          <div class="contact-content">
+            <h2>Ready to Start?</h2>
+            <a href="mailto:stefanhorning@icloud.com">Contact Me</a>
+          </div>
+
+          <div class="links-content">
+            <div class="code-links">
+                <span class="Reserved">const</span>
+                <span class="name">github</span>
+                <span class="operator">=</span>
+                <a target="_blank" href="https://github.com/Stefan-Horning">"github.com/Stefan-Horning"</a>
+                <span class="operator">;</span>
+            </div>
+
+            <div class="code-links">
+                <span class="Reserved">const</span>
+                <span class="name">email</span>
+                <span class="operator">=</span>
+                <a href="mailto:stefanhorning@icloud.com">"stefanhorning&#64;icloud.com"</a>
+                <span class="operator">;</span>
+            </div>
+
+            <div class="code-links">
+                <span class="Reserved">const</span>
+                <span class="name">linkedin</span>
+                <span class="operator">=</span>
+                <a target="_blank" href="https://www.linkedin.com/in/stefan-henry-horning/">"linkedin.com/in/" <span class="operator">+</span> <span class="name">fullName</span></a>
+                <span class="operator">;</span>
+            </div>
+        </div>
+        
+      </div>
+      <div class="future-content">
+            <div class="tech-stack-content">
+                <p class="intro-text-Cyber">I am currently focused on</p>
+                <h2 class="section-title-Cyber">Cybersecurity</h2>
+            </div>
+            <img src="/assets/background/cybersecurityhacker-01.png" alt="">
         </div>
     </div>
 </div>

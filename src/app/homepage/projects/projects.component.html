@@ -3,7 +3,8 @@
         <h1 class="first">A small selection of</h1>
         <h1 class="second">recent projects</h1>
     </div>
-    <div class="project-overdiv" *ngFor="let project of projects">
+    <div class="projects-grid">
+        <div class="project-overdiv" *ngFor="let project of projects">
             <div class="project-card">
                 <div class="image-container">
                     <img [src]="project.imageUrl" alt="{{ project.title }} Image">
@@ -28,4 +29,6 @@
                 </div>
             </div>
         </div>
+    </div>
+    
 </div>
