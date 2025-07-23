@@ -7,7 +7,7 @@
         <div class="project-overdiv" *ngFor="let project of projects">
             <div class="project-card">
                 <div class="image-container">
-                    <img [src]="project.imageUrl" alt="{{ project.title }} Image">
+                    <a target="_blank" [href]="project.link"><img [src]="project.imageUrl" alt="{{ project.title }} Image"></a>
                 </div>
                 <div class="project-content">
                     <h2>{{ project.title }}</h2>

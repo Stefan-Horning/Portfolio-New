@@ -6,7 +6,7 @@
        <div class="experience-box" *ngFor="let experience of experiences">
            <div class="image-container">
                 <img [src]="experience.icon" alt="">
-                <img class="logo" [src]="experience.companyLogo" alt="">
+                <a class="logo" [href]="experience.link" target="_blank" ><img  [src]="experience.companyLogo" alt=""></a>
            </div>
            <div>
                 <h2>{{ experience.title }}</h2>

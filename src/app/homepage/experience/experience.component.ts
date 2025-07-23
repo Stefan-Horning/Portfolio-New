@@ -17,7 +17,8 @@ export class experienceComponent {
       startDate: '8/2023',
       endDate: 'Present',
       description: 'Currently pursuing my German Abitur with a specialization in Math and Computer Science.',
-      icon: 'assets/icons/school.svg'
+      icon: 'assets/icons/school.svg',
+      link: 'https://www.bkukr.de/'
     },
     {
       company: 'Grant Thornton AG',
@@ -26,7 +27,8 @@ export class experienceComponent {
       startDate: '06/2025',
       endDate: '08/2025',
       description: 'Currently completing an internship in cybersecurity, focusing on IT forensics, security guidelines, and risk assessment. Gaining hands-on experience in analyzing security incidents, understanding regulatory compliance, and supporting the development of internal IT security policies.',
-      icon: 'assets/icons/IT-Sicherheit.svg'
+      icon: 'assets/icons/IT-Sicherheit.svg',
+      link: 'https://www.grantthornton.de/'
     },
     {
       company: 'NextLevel GmbH',
@@ -35,7 +37,8 @@ export class experienceComponent {
       startDate: '06/2024',
       endDate: '11/2024',
       description: 'Developed Angular-based web applications and gained hands-on experience in building dynamic and modular user interfaces.',
-      icon: 'assets/icons/Frontend.svg'
+      icon: 'assets/icons/Frontend.svg',
+      link: 'https://next-levels.de/'
     },
     {
       company: 'Developer Akademie',
@@ -44,7 +47,8 @@ export class experienceComponent {
       startDate: '11/2022',
       endDate: '02/2024',
       description: 'Completed a practical training program focused on Angular, TypeScript, and UI/UX design principles.',
-      icon: 'assets/icons/akademie.svg'
+      icon: 'assets/icons/akademie.svg',
+      link: 'https://developerakademie.com/'
     }
   ];
 

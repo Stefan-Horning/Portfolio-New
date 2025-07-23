@@ -6,4 +6,5 @@ export interface Experience {
     endDate: string;
     description: string;
     icon: string;
+    link: string; // Optional, if you want to include a link to the company or project
 }
